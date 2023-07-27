@@ -1,0 +1,78 @@
+@font-face {
+  font-family: Gotham Rounded;
+  src: url(GothamRoundedMedium_21022.ttf);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: Gotham Rounded, sans-serif;
+  font-weight: lighter;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #363636;
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: #1f2227 2px solid;
+  border-radius: 10px;
+  outline: none;
+  background-color: #2e4861;
+  color: #ffffff;
+}
+
+.calculator-grid > button.dark {
+  background-color: #313840;
+}
+
+.calculator-grid > button.yellow {
+  background-color: #fead54;
+}
+
+.calculator-grid > button:hover {
+  opacity: 0.75;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: #fafbff;
+  border: #1f2227 2px solid;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous-operand {
+  color: #1f2227;
+  opacity: 0.75;
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: #1f2227;
+  font-size: 2.5rem;
+}
